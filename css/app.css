@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+header.navbar-container {
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding-block: 1rem;
+  z-index: 999;
+}
+
+header.navbar-container .time p {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 2rem 4rem;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+}
+
+main .content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+main .content .content-description {
+  flex: 1 1;
+}
+
+main .content .content-description .title {
+  font-size: 3.5rem;
+  margin-block: 1rem;
+}
+
+main .content .content-description p {
+  line-height: 1.7rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+main .content .content-description .button-explore {
+  padding: 0.8rem 2.5rem;
+  margin-block-start: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: white;
+
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-color: #295e6a;
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+}
+
+main .content .content-description .button-explore:hover {
+  border: 3px solid #295e6a;
+  color: #295e6a;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+}
+
+main .content .content-image {
+  flex: 1;
+  display: flex;
+}
+
+main .content .content-image img {
+  margin: auto;
+  min-width: 250px;
+  width: 300px;
+}
+
+main aside {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-end: 0;
+}
+
+main aside .social-media {
+  height: 100%;
+  display: flex;
+}
+
+main aside .social-media ul {
+  padding: 1.5rem 1rem;
+  margin: auto;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  background-color: #295e6a;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+main aside .social-media li {
+  list-style-type: none;
+}
+
+main aside .social-media li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+main aside .social-media li a:hover {
+  color: #5b8fb9;
+}
+
+/* Medium devices (landscape tablets, 848px and down) */
+@media screen and (max-width: 848px) {
+  header.navbar-container {
+    flex-direction: column;
+  }
+
+  header.navbar-container .nav-list ul {
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+  }
+
+  main {
+    padding: 1rem 3rem;
+  }
+
+  main .content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  main .content .content-description .title {
+    font-size: 3rem;
+  }
+
+  main .content .content-description p {
+    font-size: 1rem;
+  }
+
+  main .content .content-image {
+    order: -1;
+  }
+
+  main .content .content-description {
+    text-align: center;
+  }
+
+  .quote-container{
+    margin-bottom: 2rem;
+    text-align: center; 
+  }
+}
+
+/* LOADER */
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #295e6a 100%, #0000) top/9px 9px
+      no-repeat,
+    conic-gradient(#0000 20%, #295e6a);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+  animation: loading 0.75s normal infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* QUOTE */
+.quote-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quote {
+  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 1.125rem;
+}
+
+.author {
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: black;
+  font-size: 1.25rem;
+}
+
+.new-quote-btn {
+  background-color: #295e6a;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px 17px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: 0.3 s ease-in-out;
+  border: 3px solid #295e6a;
+}
+
+.new-quote-btn:hover {
+  color: #295e6a;
+  background-color: transparent;
+}
